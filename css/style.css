@@ -1,0 +1,25 @@
+/* 51 */
+div p
+{
+
+    background-color: yellow;
+}
+section p
+{
+    background-color: whitesmoke;
+}
+div+p
+{
+    background-color: green;
+}
+div .para{
+    background-color: blue;
+}
+#para
+{
+    background-color: brown;
+}
+div #para
+{
+    background-color: aqua;
+}
