@@ -1,0 +1,11 @@
+.icard
+{
+    border: 10px solid grey;
+    height: 300px;
+    width:500px;
+    background-color: antiquewhite;
+    color: black;
+}
+*{
+    border-collapse: collapse;
+}
