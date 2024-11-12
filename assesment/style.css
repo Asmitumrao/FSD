@@ -1,0 +1,13 @@
+.content
+{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+
+}
+.part
+{
+    background-color: blueviolet;
+    height: 50vh;
+    width: 50v;
+}

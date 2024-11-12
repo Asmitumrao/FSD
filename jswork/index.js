@@ -79,9 +79,103 @@
 // }
 // console.log(selectLanguage('Java'));
 
-console.log("Hello, JS");
-console.dir(document);
+// console.log("Hello, JS");
+// console.dir(document);
 let parent = document.getElementsByClassName("parent");
-console.dir(parent);
-console.log(parent[0]);
-parent[0].innerText = "Hello, Full Stack";
+// console.log(parent[0]);
+// parent[0].innerHTML = "<h2 style = 'color:red' >Hello, Full Stack</h2>";
+
+
+
+// // creating an element ----------------------------------
+// const h1=document.createElement("h1");
+// h1.innerText="elememnt is created by dom function ";
+// parent[0].appendChild(h1);
+
+// // styling an element -----------------------------------
+// h1.style.color="blue";
+// console.log(h1);
+
+// // adding image
+// const img=document.createElement('img');
+// img.src='hippo.png';
+// console.log(img);
+// parent[0].appendChild(img);
+// img.setAttribute("height",'200')
+
+// console.log(parent);
+
+
+// // funtion -------------------
+
+// const button= document.getElementById("btn");
+// const display= document.getElementById("disp");
+// function getData()
+// {
+//     console.log("calling get data");
+//     display.innerText="welcome to CSE department";
+
+// }
+// button.addEventListener("click",getData)   // event listener------------------------
+
+
+// promises -----------------------------------------
+
+const promise1= new Promise( (resolve,reject)=>{
+    let a=Math.random();
+    a=parseInt(a*1000);
+    if(a>=100 && a<200)
+    {
+        resolve("vale is accepted "+ a);
+    }
+    else
+    {
+        reject("value is rejected " +a);
+
+    }
+
+});
+
+promise1.then((msg)=> {console.log(msg)})
+.catch(error=>{console.log(error)})
+.finally(msg=>{console.log("All resources have been closed")});
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+const promise2=new Promise(
+    (resolve,reject)=>
+    {
+        resolve({name:'Asmit',branch:"CSE"});
+    }
+);
+promise2.then((data)=> {console.log(data)})
+.catch(error=>{console.log(error)});
+
+
+
+let a=[];
+
+// Fetch Api---------------------------------------------------------------------------------
+
+const response=fetch("https://dummyjson.com/products");
+
+
+response.then(data=>{
+    console.log(data);
+    data.json().then(res=>{
+        for(let i=0; i<res.products.length; i++)
+        {
+            a.push(res.products[i].title);
+        }
+    });
+})
+const disp=document.getElementById("disp");
+for(let i=0; i<a.length; i++)
+{
+    const ele =document.createElement("h1")
+    ele.innerText=a[i];
+    parent[0].innerHTML+=ele
+}
+
+
+
