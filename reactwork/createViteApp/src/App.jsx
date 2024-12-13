@@ -84,11 +84,46 @@
 // export default App
 
 
-import React from 'react'
-import Imagemanipulation from './imagemanipulation'
+// import React from 'react'
+// import Imagemanipulation from './imagemanipulation'
+// function App() {
+//   return (
+//     <div><Imagemanipulation/></div>
+//   )
+// }
+
+// export default App
+
+// import React, { useState } from 'react'
+import Login from './login'
+import Registeration from './Registeration'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import MainLayout from './mainLayout'
+
+
+
+
+
 function App() {
+
+
+  // const [rdata,setRdata]=useState()
   return (
-    <div><Imagemanipulation/></div>
+    <div>
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<MainLayout/>}>
+        <Route path='/Login' element={<Login/>}/>
+        <Route path='/Registeration' element={<Registeration/>}/>
+        </Route>
+      </Routes>
+      </BrowserRouter>
+
+
+      {/* <div>{JSON.stringify(rdata)}</div> */}
+      {/* <Login logindata={rdata}/> */}
+      {/* <Registeration regdata={setRdata}/> */}
+    </div>
   )
 }
 

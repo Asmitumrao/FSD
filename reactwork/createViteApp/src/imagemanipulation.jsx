@@ -21,9 +21,13 @@ function Imagemanipulation() {
     {
         setWidth(wt+1);
     }
-    function dorotate()
+    function dorotatec()
     {
-        setRotate(rotate+20);
+        setRotate((rotate+20)%360);
+    }
+    function dorotatea()
+    {
+        setRotate((rotate-20)%360);
     }
     function changecolor()
     {
@@ -41,7 +45,8 @@ function Imagemanipulation() {
         <button style={buttonstyle} onClick={changecolor}>Background Color</button>
         <button style={buttonstyle} onClick={incrementHeight}>increase Height</button>
         <button style={buttonstyle} onClick={incrementWidth}>Enhance Width</button>
-        <button style={buttonstyle} onClick={dorotate}>Rotate</button>
+        <button style={buttonstyle} onClick={dorotatec}>Rotate clockwise</button>
+        <button style={buttonstyle} onClick={dorotatea}>Rotate anticlockwise</button>
         </div>
 
     </div>
