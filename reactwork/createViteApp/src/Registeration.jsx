@@ -14,6 +14,7 @@ function Registration({ regdata }) {
       password,
     };
     regdata(objectData);
+  
   };
 
   return (

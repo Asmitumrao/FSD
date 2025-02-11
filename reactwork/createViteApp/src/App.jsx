@@ -94,7 +94,7 @@
 
 // export default App
 
-// import React, { useState } from 'react'
+import { useState } from 'react'
 import Login from './login'
 import Registeration from './Registeration'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
@@ -107,22 +107,24 @@ import MainLayout from './mainLayout'
 function App() {
 
 
-  // const [rdata,setRdata]=useState()
+  const [rdata,setRdata]=useState()
   return (
     <div>
       <BrowserRouter>
       <Routes>
         <Route path='/' element={<MainLayout/>}>
-        <Route path='/Login' element={<Login/>}/>
-        <Route path='/Registeration' element={<Registeration/>}/>
+        <Route path='/Login' element={<Login logindata={rdata}/>}/>
+        <Route path='/Registeration' element={<Registeration  regdata={setRdata}/>}/>
         </Route>
       </Routes>
-      </BrowserRouter>
+      </BrowserRouter> 
 
 
-      {/* <div>{JSON.stringify(rdata)}</div> */}
-      {/* <Login logindata={rdata}/> */}
-      {/* <Registeration regdata={setRdata}/> */}
+       {/* <div>{JSON.stringify(rdata)}</div>   */}
+
+{/* 
+      <Login logindata={rdata}/> 
+      <Registeration regdata={setRdata}/> */}
     </div>
   )
 }
